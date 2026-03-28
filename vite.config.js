@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
-export default defineConfig({
-  base: '/SystemPrinting/',
+export default defineConfig(({ command }) => ({
+  base: command === 'serve' ? '/' : '/SystemPrinting/',
   server: {
     open: true,
   },
@@ -9,4 +9,4 @@ export default defineConfig({
     outDir: 'dist',
     assetsInlineLimit: 0,
   },
-});
+}));

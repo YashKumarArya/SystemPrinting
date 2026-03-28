@@ -106,7 +106,7 @@ function loadModel(onProgress) {
   loader.setDRACOLoader(dracoLoader);
 
   loader.load(
-    '/take_away_coffee_cup_set.glb',
+    import.meta.env.BASE_URL + 'take_away_coffee_cup_set.glb',
     (gltf) => {
       model = gltf.scene;
 
