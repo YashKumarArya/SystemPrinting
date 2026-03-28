@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SystemPrintings — Premium Custom Packaging</title>
+  <link rel="icon" href="/SystemPrinting/assets/logo-m-DGqQHSM8.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="/SystemPrinting/assets/index-XBk4OeYq.js"></script>
+  <link rel="stylesheet" crossorigin href="/SystemPrinting/assets/index-CKAoZD0_.css">
+</head>
+<body>
+  <!-- 3D Canvas Background -->
+  <canvas id="bg"></canvas>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <img src="/SystemPrinting/assets/logo-m-DGqQHSM8.png" alt="SystemPrintings" class="loader-logo" />
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+    <p class="loader-text">Loading Experience...</p>
+  </div>
+
+  <!-- Main Overlay Content -->
+  <div id="overlay">
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+          <img src="/SystemPrinting/assets/logo-m-DGqQHSM8.png" alt="SystemPrintings" />
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hero-line">Premium Custom</span>
+          <span class="hero-line accent">Packaging</span>
+          <span class="hero-line">for Every Brand</span>
+        </h1>
+        <p class="hero-sub">
+          Elevate your café, restaurant, or franchise with bespoke printed packaging that tells your story.
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">Explore Products</a>
+          <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+      <div class="scroll-hint">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Who We Are</span>
+          <h2>Packaging That <span class="accent">Speaks</span> for Your Brand</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="about-icon">☕</div>
+            <h3>Cafés & Coffee Shops</h3>
+            <p>Custom cups, sleeves, bags, and packaging that make your brand unforgettable — from the first pour to the last sip.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon">🍕</div>
+            <h3>Restaurants & QSRs</h3>
+            <p>Branded pizza boxes, burger packaging, pasta bowls, and takeaway solutions designed for heavy-duty use.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon">🏪</div>
+            <h3>Stalls & Food Trucks</h3>
+            <p>Eye-catching boat trays, butter paper, and on-the-go packaging that turns your stall into a brand.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon">🏢</div>
+            <h3>Franchises</h3>
+            <p>Consistent, high-quality branded packaging across every outlet — maintain brand identity at scale.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Our Products</span>
+          <h2>Everything Your Brand <span class="accent">Needs</span></h2>
+          <p class="section-desc">From cups to carry bags — fully customizable printed packaging solutions.</p>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="product-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="packaging">Packaging</button>
+          <button class="filter-btn" data-filter="drinkware">Drinkware</button>
+          <button class="filter-btn" data-filter="bags">Bags & Carry</button>
+          <button class="filter-btn" data-filter="extras">Extras</button>
+          <button class="filter-btn" data-filter="custom">Custom</button>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+          <!-- Packaging -->
+          <div class="product-card" data-category="packaging">
+            <div class="product-img-placeholder"><span>📄</span></div>
+            <h4>Butter Paper</h4>
+            <p>Custom printed food-safe wrapping</p>
+          </div>
+          <div class="product-card" data-category="packaging">
+            <div class="product-img-placeholder"><span>🍔</span></div>
+            <h4>Burger Box</h4>
+            <p>Sturdy branded burger packaging</p>
+          </div>
+          <div class="product-card" data-category="packaging">
+            <div class="product-img-placeholder"><span>🍕</span></div>
+            <h4>Pizza Box</h4>
+            <p>Custom printed corrugated pizza boxes</p>
+          </div>
+          <div class="product-card" data-category="packaging">
+            <div class="product-img-placeholder"><span>🚤</span></div>
+            <h4>Boat Trays</h4>
+            <p>Branded food serving trays</p>
+          </div>
+          <div class="product-card" data-category="packaging">
+            <div class="product-img-placeholder"><span>🍰</span></div>
+            <h4>Pastry Box</h4>
+            <p>Elegant pastry & dessert packaging</p>
+          </div>
+          <div class="product-card" data-category="packaging">
+            <div class="product-img-placeholder"><span>🎂</span></div>
+            <h4>Cake Box</h4>
+            <p>Premium branded cake packaging</p>
+          </div>
+          <div class="product-card" data-category="packaging">
+            <div class="product-img-placeholder"><span>🍝</span></div>
+            <h4>Pasta Bowl</h4>
+            <p>Branded bowl packaging for pastas</p>
+          </div>
+
+          <!-- Drinkware -->
+          <div class="product-card" data-category="drinkware">
+            <div class="product-img-placeholder"><span>☕</span></div>
+            <h4>Glass with Sleeve</h4>
+            <p>Branded cups with custom sleeves</p>
+          </div>
+          <div class="product-card" data-category="drinkware">
+            <div class="product-img-placeholder"><span>🥤</span></div>
+            <h4>Sipper Glass</h4>
+            <p>Custom printed sipper glasses</p>
+          </div>
+          <div class="product-card" data-category="drinkware">
+            <div class="product-img-placeholder"><span>🧊</span></div>
+            <h4>Transparent Glass</h4>
+            <p>Clear branded drinkware</p>
+          </div>
+          <div class="product-card" data-category="drinkware">
+            <div class="product-img-placeholder"><span>🧋</span></div>
+            <h4>Cold Coffee Glass</h4>
+            <p>Printed cold beverage glasses</p>
+          </div>
+          <div class="product-card" data-category="drinkware">
+            <div class="product-img-placeholder"><span>☕</span></div>
+            <h4>Hot Beverages Glass</h4>
+            <p>Insulated branded hot cups</p>
+          </div>
+          <div class="product-card" data-category="drinkware">
+            <div class="product-img-placeholder"><span>🥛</span></div>
+            <h4>Double Wall Glass</h4>
+            <p>Premium double-wall insulated cups</p>
+          </div>
+
+          <!-- Bags -->
+          <div class="product-card" data-category="bags">
+            <div class="product-img-placeholder"><span>🛍️</span></div>
+            <h4>Carry Bag</h4>
+            <p>Custom branded carry bags</p>
+          </div>
+          <div class="product-card" data-category="bags">
+            <div class="product-img-placeholder"><span>🐶</span></div>
+            <h4>Doggy Bag</h4>
+            <p>Branded takeaway doggy bags</p>
+          </div>
+
+          <!-- Extras -->
+          <div class="product-card" data-category="extras">
+            <div class="product-img-placeholder"><span>🧻</span></div>
+            <h4>Tissue Paper</h4>
+            <p>Custom printed tissue papers</p>
+          </div>
+          <div class="product-card" data-category="extras">
+            <div class="product-img-placeholder"><span>🍴</span></div>
+            <h4>Cutlery</h4>
+            <p>Branded cutlery packaging</p>
+          </div>
+          <div class="product-card" data-category="extras">
+            <div class="product-img-placeholder"><span>🎉</span></div>
+            <h4>Birthday Lights</h4>
+            <p>Custom party decorations</p>
+          </div>
+          <div class="product-card" data-category="extras">
+            <div class="product-img-placeholder"><span>👕</span></div>
+            <h4>T-Shirts</h4>
+            <p>Custom branded apparel</p>
+          </div>
+
+          <!-- Custom -->
+          <div class="product-card" data-category="custom">
+            <div class="product-img-placeholder"><span>🎨</span></div>
+            <h4>Customization Print</h4>
+            <p>Fully bespoke print-on-demand</p>
+          </div>
+          <div class="product-card" data-category="custom">
+            <div class="product-img-placeholder"><span>🎁</span></div>
+            <h4>Custom Gift Hampers</h4>
+            <p>Curated branded gift sets</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Why Choose Us</span>
+          <h2>Built for <span class="accent">Brands</span> Like Yours</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon">✦</div>
+            <h3>Premium Quality</h3>
+            <p>Food-grade materials, vibrant print quality, and finishes that make your brand look as good as your food tastes.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">⚡</div>
+            <h3>Fast Turnaround</h3>
+            <p>From design approval to delivery — we move fast without cutting corners, so your launch stays on schedule.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">🎯</div>
+            <h3>Fully Customizable</h3>
+            <p>Your logo, your colours, your story — every product is 100% tailored to your brand identity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get In Touch</span>
+          <h2>Let's Create Something <span class="accent">Beautiful</span></h2>
+          <p class="section-desc">Tell us about your brand and we'll craft the perfect packaging solution.</p>
+        </div>
+        <div class="contact-wrapper">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="business">Business Name</label>
+                <input type="text" id="business" name="business" placeholder="Café Bliss" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="hello@cafebliss.com" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" />
+              </div>
+            </div>
+            <div class="form-group full">
+              <label for="message">Tell us about your requirements</label>
+              <textarea id="message" name="message" rows="5" placeholder="We're opening a new café and need custom cups, bags, and packaging for 3 outlets..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Send Inquiry →</button>
+          </form>
+          <div class="contact-info">
+            <div class="contact-info-card">
+              <h3>Quick Connect</h3>
+              <p>Prefer a direct chat? Reach us on WhatsApp or give us a call.</p>
+              <a href="https://wa.me/917906533414" target="_blank" class="btn btn-whatsapp">
+                💬 Chat on WhatsApp
+              </a>
+              <div class="contact-details">
+                <div class="contact-detail">
+                  <span class="detail-label">Owner</span>
+                  <span>Mayank Giri</span>
+                </div>
+                <div class="contact-detail">
+                  <span class="detail-label">Phone</span>
+                  <span>+91 79065 33414</span>
+                </div>
+                <div class="contact-detail">
+                  <span class="detail-label">Location</span>
+                  <span>Moradabad, India</span>
+                </div>
+                <div class="contact-detail">
+                  <span class="detail-label">Instagram</span>
+                  <a href="https://www.instagram.com/systemsprinting.pps" target="_blank" style="color: var(--accent); text-decoration: none;">@systemsprinting.pps</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="/SystemPrinting/assets/logo-m-DGqQHSM8.png" alt="SystemPrintings" class="footer-logo" />
+            <p>Premium custom packaging solutions for cafés, restaurants, stalls, and franchises.</p>
+            <div class="footer-social">
+              <a href="https://www.instagram.com/systemsprinting.pps" target="_blank" aria-label="Instagram" class="social-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a href="https://wa.me/917906533414" target="_blank" aria-label="WhatsApp" class="social-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#why-us">Why Us</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-links">
+            <h4>Contact</h4>
+            <a href="tel:+917906533414">+91 79065 33414</a>
+            <a href="https://wa.me/917906533414" target="_blank">WhatsApp</a>
+            <a href="https://www.instagram.com/systemsprinting.pps" target="_blank">Instagram</a>
+            <span style="color: var(--text-muted); font-size: 0.88rem; display: block; padding: 4px 0;">Moradabad, India</span>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 SystemPrintings. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/917906533414" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
+
+</body>
+</html>
