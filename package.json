@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist"
+    "deploy": "vite build --outDir docs --emptyOutDir && git add . && git commit -m 'build: deploy to pages' && git push origin main"
   },
   "dependencies": {
     "gsap": "^3.14.2",
