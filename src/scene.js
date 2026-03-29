@@ -33,12 +33,16 @@ export function initScene(canvas, onProgress) {
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.2;
+  renderer.toneMappingExposure = 1.3;
+  
+  // Enable shadows
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
   // Scene
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x0e0a05);
-  scene.fog = new THREE.Fog(0x0e0a05, 8, 20);
+  // No background - transparent to show CSS gradient
+  scene.fog = new THREE.Fog(0xe87830, 10, 25);
 
   // Camera
   camera = new THREE.PerspectiveCamera(
@@ -68,32 +72,63 @@ export function initScene(canvas, onProgress) {
 
 // ─── Lights ───────────────────────────────────────────────────────
 function setupLights() {
-  // Soft warm ambient
-  const ambient = new THREE.AmbientLight(0xffd4a0, 0.6);
+  // Bright ambient so model reads well on orange bg
+  const ambient = new THREE.AmbientLight(0xfff0e0, 0.7);
   scene.add(ambient);
 
-  // Key light — warm directional from upper-right
-  const key = new THREE.DirectionalLight(0xffecd2, 1.8);
+  // Key light — strong warm white from upper-right
+  const key = new THREE.DirectionalLight(0xffffff, 2.2);
   key.position.set(3, 5, 4);
-  key.castShadow = false;
+  key.castShadow = true;
+  
+  // Shadow configuration
+  key.shadow.mapSize.width = 2048;
+  key.shadow.mapSize.height = 2048;
+  key.shadow.camera.near = 0.5;
+  key.shadow.camera.far = 20;
+  key.shadow.camera.left = -5;
+  key.shadow.camera.right = 5;
+  key.shadow.camera.top = 5;
+  key.shadow.camera.bottom = -5;
+  key.shadow.bias = -0.0001;
+  
   scene.add(key);
 
-  // Fill light — cooler from the left
-  const fill = new THREE.DirectionalLight(0xc8d8f0, 0.4);
+  // Fill light — cool bluish to contrast the orange bg
+  const fill = new THREE.DirectionalLight(0xc0d8ff, 0.5);
   fill.position.set(-3, 2, 2);
   scene.add(fill);
 
-  // Rim light — subtle back-light
-  const rim = new THREE.DirectionalLight(0xffe0b0, 0.5);
+  // Rim light — warm white back-light for edge glow
+  const rim = new THREE.DirectionalLight(0xfff0d0, 1.6);
   rim.position.set(0, 3, -4);
   scene.add(rim);
 
-  // Spotlight for dramatic top-down glow
-  const spot = new THREE.SpotLight(0xffd090, 0.8, 15, Math.PI / 6, 0.5);
-  spot.position.set(0, 6, 0);
+  // Secondary rim — slight cool edge for depth
+  const rimSide = new THREE.DirectionalLight(0xe0e8ff, 0.6);
+  rimSide.position.set(-4, 2, -2);
+  scene.add(rimSide);
+
+  // Spotlight — bright top-down
+  const spot = new THREE.SpotLight(0xfff5e0, 1.3, 15, Math.PI / 5, 0.6);
+  spot.position.set(0, 7, 1);
   spot.target.position.set(0, 0, 0);
   scene.add(spot);
   scene.add(spot.target);
+
+  // Subtle ground bounce — orange-tinted from below
+  const bounce = new THREE.PointLight(0xe87830, 0.3, 8);
+  bounce.position.set(0, -1, 2);
+  scene.add(bounce);
+  
+  // Add invisible ground plane to receive shadows
+  const groundGeo = new THREE.PlaneGeometry(10, 10);
+  const groundMat = new THREE.ShadowMaterial({ opacity: 0.3 });
+  const ground = new THREE.Mesh(groundGeo, groundMat);
+  ground.rotation.x = -Math.PI / 2;
+  ground.position.y = -0.4;
+  ground.receiveShadow = true;
+  scene.add(ground);
 }
 
 // ─── Model Loading ────────────────────────────────────────────────
@@ -125,13 +160,16 @@ function loadModel(onProgress) {
         model.scale.setScalar(scale);
       }
 
-      // Improve materials
+      // Improve materials and enable shadows
       model.traverse((child) => {
         if (child.isMesh) {
           child.material.envMapIntensity = 0.8;
           if (child.material.metalness !== undefined) {
             child.material.metalness = Math.min(child.material.metalness, 0.6);
           }
+          // Enable shadows
+          child.castShadow = true;
+          child.receiveShadow = true;
         }
       });
 
@@ -180,8 +218,8 @@ function addEnvironment() {
   const envMat = new THREE.ShaderMaterial({
     side: THREE.BackSide,
     uniforms: {
-      topColor: { value: new THREE.Color(0x1a1008) },
-      bottomColor: { value: new THREE.Color(0x0e0a05) },
+      topColor: { value: new THREE.Color(0xf4a460) },
+      bottomColor: { value: new THREE.Color(0xd85820) },
     },
     vertexShader: `
       varying vec3 vWorldPosition;
